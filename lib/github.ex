@@ -1,9 +1,5 @@
 defmodule Github do
-  @moduledoc """
-  Github keeps the contexts that define your domain
-  and business logic.
+  alias Github.Users.Get, as: UserGet
 
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
-  """
+  defdelegate get_user_by_name(params), to: UserGet, as: :user_repos
 end
